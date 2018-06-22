@@ -1,0 +1,26 @@
+<nb-card size="large">
+
+
+
+  <nb-card-body>
+<mat-toolbar>
+  <mat-toolbar-row>
+    <span>{{tache.nomTache}}</span>
+
+
+  </mat-toolbar-row>
+</mat-toolbar>
+<br><br><br>
+<mat-progress-bar mode="determinate" value="{{ AvcMax.progression}}"></mat-progress-bar>
+<br><br><br>
+
+<textarea  class="form-control" placeholder="Description ..." [(ngModel)]="tache.description"></textarea>
+
+<button class="btn btn-danger btn-round" (click)="update(this.tache.idTache, this.tache)" >Update</button>
+
+
+<div class="col-lg-12"><app-chart-tache></app-chart-tache></div>
+
+  </nb-card-body>
+
+</nb-card>

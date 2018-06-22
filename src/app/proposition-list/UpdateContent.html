@@ -1,0 +1,7 @@
+<div>
+
+  <textarea class="form-control " placeholder="content" [(ngModel)]="data.proposition.rectification" >Contenu revisité</textarea>
+
+</div>
+<button mat-button [mat-dialog-close]="data.proposition" cdkFocusInitial>Submit</button>
+<button mat-button (click)="onNoClick()">Cancel </button>

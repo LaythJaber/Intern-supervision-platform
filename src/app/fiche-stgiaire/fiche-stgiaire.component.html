@@ -1,0 +1,88 @@
+<br>
+<div class="main-content center" >
+
+  <div class="container-fluid">
+    <div class="row">
+
+
+      <div class="col-md-10">
+        <div class="card card-profile">
+
+          <div class="card-body">
+
+            <h4 class="card-title">{{stg.prenom}}  {{stg.nom}}</h4>
+            <p class="card-description">
+              Etablissement : {{stg.etablissement_formation}}
+            </p>
+            <div *ngFor="let comp of Competences ;  ">
+
+              <mat-button-toggle >{{comp.nomCompetence}}</mat-button-toggle>
+              <mat-slider [disabled]="disabled" [max]="5" [min]="0" [step]="1" [ngModel]=comp.niveau ></mat-slider>
+            </div>
+            <div class="form-group">
+              <label for="encadrant">Encadrant</label>
+
+              <select [(ngModel)]="stg.encadrantStagiaire" id="encadrant" >
+                <option *ngFor="let e of Encadrants" [ngValue]="e" >{{e.login}}</option>
+              </select>
+
+
+
+            </div>
+
+            <button class="btn btn-danger btn-semi-round" (click)="Compare()">Les Projets les plus appropriés</button>
+            <br><br>
+
+            <div class="form-group">
+              <label for="projets">Projet</label>
+
+              <select [(ngModel)]=" NomProjet" id="projets"  (click)="declenche()">
+                <option *ngFor="let p of Projets" [ngValue]="p"  >{{p}}</option>
+              </select>
+
+
+
+            </div>
+            <div class="form-group">
+              <label for="groupes">Groupes</label>
+
+              <select [(ngModel)]=" stg.projetStagiaire" id="groupes" >
+                <option *ngFor="let s of Stagiaires" [ngValue]="s.projetStagiaire">{{s.nom}}
+                </option>
+              </select>
+
+
+
+            </div>
+            <button class="btn btn-danger btn-semi-round"   (click)="add($event)">ajout</button>
+
+
+            <div class="form-group">
+              <label for="Login">Login</label>
+              <input type="text" class="form-control" id="Login" [(ngModel)]="stg.login" placeholder="Login">
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="Password" class="form-control" id="password" [(ngModel)]="stg.password" placeholder="Password">
+            </div>
+
+
+
+            <button class="btn btn-danger btn-semi-round" (click)="declenchePerformances(stg)">Anciennes performances du stagiaire</button>
+            <button class="btn btn-danger btn-semi-round" (click)="save()">Submit</button>
+
+
+
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<toaster-container [toasterconfig]="config"></toaster-container>

@@ -1,0 +1,26 @@
+<nb-card size="xsmall" >
+  <nb-card-body>
+<div class="container">
+
+
+  <table class="table table-stripped">
+
+      <th>Propositions</th>
+
+    <tr *ngFor="let p of Propositions" >
+
+      <td> {{p.contenu}}</td>
+
+      <td>   <i class="material-icons" (click)="deleate(p.idProposition)"     >clear</i>
+      </td>
+      <td>   <i class="material-icons" (click)="openDialog(p)" >report</i>
+      </td>
+      <td>  <i class="material-icons" (click)= "update(p)"      >check</i>
+      </td>
+    </tr>
+
+  </table>
+
+</div>
+  </nb-card-body>
+</nb-card>

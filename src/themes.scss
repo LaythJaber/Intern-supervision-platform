@@ -1,0 +1,51 @@
+// import Nebular Theme System and the default theme
+@import '../node_modules/@nebular/theme/styles/theming';
+@import '../node_modules/@nebular/theme/styles/themes/default';
+@import '~@nebular/theme/styles/themes/cosmic';
+
+/*
+$nb-enabled-themes: (default, dark);
+
+
+$nb-themes: nb-register-theme((
+
+  color-bg: #e9f9ee,
+  shadow: #e9f9ee,
+  layout-bg: #e9f9ee,
+  color-fg: #e9f9ee,
+  sidebar-width:20rem
+), default, default);
+
+
+// dark theme
+$nb-themes: nb-register-theme((
+
+  color-bg: #afbab3,
+  shadow: 0 1px 2px 0 #000000,
+  color-fg: #303030,
+  layout-bg: #ededed,
+  sidebar-width:20rem
+), dark, cosmic);
+*/
+
+$nb-enabled-themes: (default, cosmic);
+
+$nb-themes: nb-register-theme((
+  // app wise variables for each theme
+  sidebar-header-gap: 2rem,
+  sidebar-header-height: initial,
+  layout-content-width: 1400px,
+  sidebar-width:20rem,
+  font-main: Roboto,
+  font-secondary: Exo,
+), default, default);
+
+$nb-themes: nb-register-theme((
+  // app wise variables for each theme
+  sidebar-header-gap: 2rem,
+  sidebar-header-height: initial,
+  layout-content-width: 1400px,
+
+  font-main: Roboto,
+  font-secondary: Exo,
+), cosmic, cosmic);

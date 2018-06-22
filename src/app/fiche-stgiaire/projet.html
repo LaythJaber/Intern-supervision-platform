@@ -1,0 +1,27 @@
+<table class="table table-stripped">
+
+    <th>   ID </th>  <th> intitulé  Projet</th>
+
+
+
+
+
+  <tr *ngFor="let p of data.Projets" >
+    <td><h4> {{p.idProjet}}</h4></td>
+    <td><h4> {{p.nomProjet}}</h4></td></tr>
+<!--
+  <tr >
+    <td><h4> 1</h4></td>
+    <td><h4>Plateforme Supervision Stagiaire</h4></td>
+  </tr>
+  <tr>
+  <td><h4> 3</h4></td>
+  <td><h4>plateforme de déploiement automatisée 	</h4></td>
+  </tr>
+
+-->
+
+
+
+  <button (click)="onNoClick()" >  Close   </button>
+</table>

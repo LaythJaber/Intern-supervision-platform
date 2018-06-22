@@ -1,0 +1,38 @@
+
+<div class="container spacer">
+  <div class="card">
+    <div class="card-header">SousTache</div>
+    <div class="card-body">
+
+
+
+
+      <div class="form-group">
+        <label for="NomSousTache">Nom de la sous tache </label>
+        <input type="text" class="form-control" id="NomSousTache" [(ngModel)]="sousTache.nomSousTache" placeholder="Nom sous tache">
+      </div>
+      <div class="form-group">
+        <label for="Description">Description </label>
+        <input type="text" class="form-control" id="Description" [(ngModel)]="sousTache.description" placeholder="description">
+      </div>
+      <div class="form-group">
+        <label for="Estimation">Estimation</label>
+        <input type="number" class="form-control" id="Estimation" [(ngModel)]="sousTache.estimation" placeholder="Estimation">
+      </div>
+
+      <div class="form-group">
+        <label for="Priorité">Priorité</label>
+        <input type="number" class="form-control" id="Priorité" [(ngModel)]="sousTache.priorite " placeholder="Priorité">
+      </div>
+
+
+
+
+
+      <button class="btn btn-primary" (click)="save()">Submit</button>
+
+
+
+    </div>
+  </div>
+</div>

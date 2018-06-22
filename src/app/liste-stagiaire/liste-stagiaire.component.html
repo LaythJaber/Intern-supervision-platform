@@ -1,0 +1,54 @@
+<!--
+<table class="table table-stripped">
+  <tr>
+    <th>   ID </th>  <th> Stagiaire Login</th>
+
+
+
+
+  </tr>
+  <tr *ngFor="let s of Stagiaires" >
+    <td><h4> {{s.nom}} {{s.prenom}}</h4></td>
+
+    <td><h4> {{s.projetStagiaire.nomProjet}}</h4></td>
+
+    <td>   <button class="btn btn-primary"   (click)="Consulter(s.idPersonne)"  >Consulter</button>
+    </td>
+  </tr>
+
+</table> -->
+<a routerLink="/Creation/{{idEnc}}" ><button class="col-md-4 offset-md-4 btn btn-danger btn-semi-round" >Créer Un Projet</button></a>
+<div class="row show-grid">
+  <div class="col-md-6 offset-md-3">
+
+
+    <nb-card  *ngFor="let s of Stagiaires;">
+      <nb-card-header>
+        <h4>Prenom : {{s.prenom}}</h4>
+        <p> Nom : {{s.nom}}</p>
+
+
+      </nb-card-header>
+
+      <nb-card-body>
+
+
+        <h5> Projet :</h5>
+          <h6 >  {{s.projetStagiaire.nomProjet}} </h6>
+
+
+
+        <button class="btn btn-danger btn-semi-round offset-md-4"   (click)="Consulter(s.idPersonne)"  >Consulter</button>
+
+
+            </nb-card-body>
+
+        </nb-card>
+
+
+  </div>
+</div>
+
+<br><br>
+
+<small><button class="col-md-6 offset-md-3 btn btn-danger btn-semi-round" (click)="logout()">Quitter</button></small>

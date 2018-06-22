@@ -1,0 +1,21 @@
+<nb-layout>
+
+  <nb-layout-header><app-header-encadrant></app-header-encadrant></nb-layout-header>
+  <nb-sidebar right  sidebar-width="100rem">
+
+<!--    <nb-sidebar-header><i class="material-icons " routerLink="stagiaireIdentite">account_circle</i>
+      <a  routerLink="calendrier"><i class="material-icons ">access_time</i></a>
+      <i class="material-icons " routerLink="/login">power_settings_new</i></nb-sidebar-header>-->
+    <div><app-proposition-list></app-proposition-list></div>
+<br>
+    <div><app-chat-encadrant></app-chat-encadrant></div>
+
+
+  </nb-sidebar>
+
+  <nb-layout-column>
+    <app-liste-tache-encadrant></app-liste-tache-encadrant>
+
+
+  </nb-layout-column>
+</nb-layout>

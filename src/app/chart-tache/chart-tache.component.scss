@@ -1,0 +1,17 @@
+@import '../../themes';
+
+@include nb-install-component() {
+
+  ngx-echarts-line,
+
+  ngx-echarts-radar {
+    display: block;
+    height: nb-theme(card-height-medium);
+    width: 100%;
+  }
+
+  /deep/ .echart {
+    height: 100%;
+    width: 100%;
+  }
+}

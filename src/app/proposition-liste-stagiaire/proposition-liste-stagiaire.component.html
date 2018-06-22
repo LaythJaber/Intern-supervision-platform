@@ -1,0 +1,91 @@
+<nb-layout>
+
+  <nb-layout-header><app-header></app-header></nb-layout-header>
+  <nb-sidebar right  sidebar-width="100rem">
+    <!-- <nb-sidebar-header>
+       <a routerLink="/stagiaire/{{idstg}}"><i class="material-icons " >account_circle</i></a>
+       <a  routerLink="/calendrier/{{idstg}}"><i class="material-icons ">access_time</i></a>
+       <a routerLink="/logout/{{idstg}}" ><i class="material-icons " >power_settings_new</i></a>
+       <a routerLink="/listeDespropositions/{{idstg}}" ><i class="material-icons " >lightbulb_outline</i></a>
+
+     </nb-sidebar-header>-->
+
+
+
+
+
+    <div>  <app-proposition ></app-proposition></div>
+    <div> <app-chat></app-chat></div>
+  </nb-sidebar>
+
+  <nb-layout-column>
+
+
+    <nb-card size="large">
+      <nb-card-body>
+
+
+
+          <nb-card *ngFor="let p of Propositions">
+            <nb-card-header><h6>Proposition</h6></nb-card-header>
+
+            <nb-card-body>
+
+              <div class="header">
+                <div>
+                  <h6>Contenu :</h6>
+                  <p>{{p.contenu}}</p>
+                </div>
+
+                <div class="detail font-w-light">
+                  <p *ngIf="!p.validation">Non Validé</p>
+                  <p *ngIf="p.validation">Validé</p>
+
+                </div>
+              </div>
+              <div class="header" *ngIf="!p.validation">
+                <div>
+                  <h6>Rectification :</h6>
+                  <p>{{p.rectification}}</p>
+                </div>
+
+
+              </div>
+
+            </nb-card-body>
+
+          </nb-card>
+
+        <!--<div class="container">
+
+          <table class="table table-stripped">
+            <tr>
+              <th>   ID Proposition</th>  <th> Contenu</th> <th>Validation</th> <th>Rectification</th>
+
+
+
+
+            </tr>
+            <tr *ngFor="let p of Propositions" >
+
+
+              <td> <h4>{{p.idProposition}}</h4></td>
+
+              <td><h4> {{p.contenu}}</h4></td>
+
+
+              <td *ngIf="!p.validation"><h4>Non Validé</h4></td>
+              <td *ngIf="!p.validation"><h5> {{p.rectification}}</h5></td>
+
+
+
+            </tr>
+
+          </table>
+
+        </div>-->
+      </nb-card-body>
+    </nb-card>
+
+  </nb-layout-column>
+</nb-layout>

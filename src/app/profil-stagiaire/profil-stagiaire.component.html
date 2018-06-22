@@ -1,0 +1,84 @@
+
+<nb-layout>
+
+  <nb-layout-header><app-header></app-header></nb-layout-header>
+  <nb-sidebar right  sidebar-width="100rem">
+    <div>  <app-proposition ></app-proposition></div>
+    <div> <app-chat></app-chat></div>
+  </nb-sidebar>
+
+
+  <nb-layout-column>
+
+
+<nb-card size="large">
+  <nb-card-body>
+
+            <div class="card card-profile">
+
+              <div class="card-body">
+                <h3>{{stg.prenom}}  {{stg.nom}}</h3>
+                <p class="mb-5">
+                  Etablissement :  <strong>{{stg.etablissement_formation}}</strong>
+                </p>
+
+
+
+                <p class="card-description">
+                  Competences :
+                </p>
+                <div *ngFor="let comp of Competences ;  ">
+                  <mat-button-toggle [checked]="!comp.validation">{{comp.nomCompetence}}</mat-button-toggle>
+                  <mat-slider [disabled]="disabled" [max]="5" [min]="0" [step]="1" [ngModel]=comp.niveau (ngModelChange)="updateSkills($event,comp)"></mat-slider>
+                </div>
+                <br><br>
+                <button class="btn btn-danger btn-semi-round" (click)="updateMode()"  *ngIf="!updatemode">Update</button>
+
+                <button class="btn btn-danger btn-semi-round" *ngIf="updatemode" (click)="BulkUpdate()">Enregistrer</button>
+
+                <br><br>
+                <button class="btn btn-danger btn-semi-round" *ngIf="updatemode" (click)="AjoutMode()" >Ajouter une competence</button>
+
+
+
+
+                <br><br><br>
+                <mat-card *ngIf="ajoutmode">
+                  <mat-card-header>
+
+                    <mat-card-title><h4>Ajouter Une Competence</h4> </mat-card-title>
+                    <mat-card-subtitle>
+                      <mat-form-field >
+                        <input matInput placeholder="Competence " [(ngModel)]="newCompetence.nomCompetence">
+                      </mat-form-field>
+                    </mat-card-subtitle>
+                  </mat-card-header>
+
+                  <mat-card-content>
+
+                    <mat-slider [max]="5" [min]="0" [step]="1" [(ngModel)]=newCompetence.niveau ></mat-slider>
+
+                  </mat-card-content>
+                  <mat-card-actions>
+                    <button class="btn btn-danger btn-semi-round"  (click)="addSkills()">ADD</button>
+                  </mat-card-actions>
+                </mat-card>
+
+
+
+
+
+
+
+              </div>
+            </div>
+
+
+</nb-card-body>
+</nb-card>
+
+
+
+
+  </nb-layout-column>
+</nb-layout>

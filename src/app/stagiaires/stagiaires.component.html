@@ -1,0 +1,47 @@
+<div class="container">
+  <P></P>
+  <button  class="btn btn-danger btn-semi-round offset-md-5" (click)="onNewStgiaire()" >
+
+    Ajouter Stagiaire
+  </button>
+
+
+  <div class="row show-grid">
+    <div class="col-md-6 offset-md-3">
+
+
+      <nb-card  *ngFor="let s of stagiaires;">
+        <nb-card-header>
+          <h4>Prenom : {{s.prenom}}</h4>
+          <p> Nom : {{s.nom}}</p>
+
+
+        </nb-card-header>
+
+        <nb-card-body>
+
+
+          <h5> Projet :</h5>
+          <h6 *ngIf="s.projetStagiaire!=null">  {{s.projetStagiaire.nomProjet}} </h6>
+
+          <h5 > Encadrant :</h5>
+          <h6 *ngIf="s.encadrantStagiaire!=null">  {{s.encadrantStagiaire.nom}} </h6>
+
+          <button class="btn btn-danger btn-semi-round offset-md-4"   (click)="Consulter(s.idPersonne)"  >Consulter</button>
+
+
+        </nb-card-body>
+
+      </nb-card>
+
+
+    </div>
+  </div>
+
+
+</div>
+
+
+<br><br>
+
+<small><button class="col-md-6 offset-md-3 btn btn-danger btn-semi-round" (click)="logout()">Quitter</button></small>

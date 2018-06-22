@@ -1,0 +1,46 @@
+<div class="row show-grid">
+  <div class="col-md-6 offset-md-3">
+
+
+  <nb-card *ngFor="let tache of Taches ;let i=index;">
+<nb-card-header>
+    <h2>Tache : {{tache.nomTache}}</h2>
+       <p> Iteration :  {{tache.iterationActuelle}}</p>
+    Passer à l'iteration suivante ? :
+    <button class="btn btn-hero-secondary" (click)="updateIteration($event,tache)">Oui</button><br><br>
+</nb-card-header>
+
+<nb-card-body>
+
+  <nb-card size="small" *ngFor="let soustache of SousTaches;"  [hidden]="tache.idTache!==soustache.tacheSousTache.idTache">
+    <nb-card-header><h5>Sous Tache : {{soustache.nomSousTache}}</h5></nb-card-header>
+    <nb-card-body>
+      <div class="card"   *ngFor="let avc of Avancements; " [hidden]="soustache.idSousTache!==avc.sousTacheAvancement.idSousTache">
+        <div class="card-body">
+          <h5> Progression :</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{avc.progression}}<mat-slider [max]="100" min="{{avc.progression}}" [step]="5" [(ngModel)]="avancement3.progression" ></mat-slider>100
+          </h6>
+
+          <button class="btn btn-danger btn-semi-round"  (click)="addAvancement($event,tache,avancement3,avc)">Save</button>
+        </div>
+      </div></nb-card-body>
+<!--
+      <div *ngFor="let avc of Avancements; " [hidden]="soustache.idSousTache!==avc.sousTacheAvancement.idSousTache" >
+
+
+
+        Progression : {{avc.progression}}<mat-slider [max]="100" min="{{avc.progression}}" [step]="5" [(value)]="avc.progression" ></mat-slider>100
+        <button class="btn btn-danger btn-round"  (click)="addAvancement($event,avc,tache)">Save</button>
+
+      </div>
+-->
+  </nb-card>
+    <br><br>
+    <button class="btn btn-danger btn-semi-round offset-md-4 "  (click)="addAvancementTache($event,tache)">Enregistrer</button>
+    <br><br>
+</nb-card-body>
+  </nb-card>
+<button class="col-md-6 offset-md-3 btn btn-danger btn-semi-round" (click)="logout()">Quitter</button>
+
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<nb-layout>
+
+  <nb-layout-header><app-header-encadrant></app-header-encadrant></nb-layout-header>
+  <nb-sidebar right  sidebar-width="100rem">
+
+    <!--    <nb-sidebar-header><i class="material-icons " routerLink="stagiaireIdentite">account_circle</i>
+          <a  routerLink="calendrier"><i class="material-icons ">access_time</i></a>
+          <i class="material-icons " routerLink="/login">power_settings_new</i></nb-sidebar-header>-->
+    <div><app-proposition-list></app-proposition-list></div>
+    <br>
+    <div><app-chat-encadrant></app-chat-encadrant></div>
+
+
+  </nb-sidebar>
+
+  <nb-layout-column>
+
+
+    <nb-card size="large">
+      <nb-card-body>
+
+            <div class="card card-profile">
+
+              <div class="card-body">
+
+                <h4 class="card-title">{{stg.prenom}}  {{stg.nom}}</h4>
+                <p class="card-description">
+                  Etablissement : {{stg.etablissement_formation}} </p>
+                <p>Projet  : {{stg.projetStagiaire.nomProjet}}</p>
+                <p>Encadrant :{{ stg.encadrantStagiaire.nom}}</p>
+
+
+                <div *ngFor="let comp of Competences ;  ">
+
+                  <mat-button-toggle >{{comp.nomCompetence}}</mat-button-toggle>
+                  <mat-slider [disabled]="disabled" [max]="5" [min]="0" [step]="1" [ngModel]=comp.niveau ></mat-slider>
+                  <button  class="btn btn-hero-secondary " *ngIf="!State(comp)"  (click)="update(comp)" >  Confirmer  </button>
+                </div>
+
+
+
+
+
+
+
+
+              </div>
+            </div>
+      </nb-card-body>
+    </nb-card>
+
+
+
+  </nb-layout-column>
+</nb-layout>
+

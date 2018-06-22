@@ -1,0 +1,27 @@
+
+<nb-layout>
+
+  <nb-layout-header><app-header></app-header></nb-layout-header>
+  <nb-sidebar right  sidebar-width="100rem">
+   <!-- <nb-sidebar-header>
+      <a routerLink="/stagiaire/{{idstg}}"><i class="material-icons " >account_circle</i></a>
+      <a  routerLink="/calendrier/{{idstg}}"><i class="material-icons ">access_time</i></a>
+      <a routerLink="/logout/{{idstg}}" ><i class="material-icons " >power_settings_new</i></a>
+      <a routerLink="/listeDespropositions/{{idstg}}" ><i class="material-icons " >lightbulb_outline</i></a>
+
+    </nb-sidebar-header>-->
+
+
+
+
+
+    <div>  <app-proposition ></app-proposition></div>
+    <div> <app-chat></app-chat></div>
+  </nb-sidebar>
+
+  <nb-layout-column>
+    <app-liste-tache ></app-liste-tache>
+
+
+  </nb-layout-column>
+</nb-layout>
